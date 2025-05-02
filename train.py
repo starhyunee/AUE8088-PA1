@@ -30,12 +30,19 @@ if __name__ == "__main__":
         batch_size = cfg.BATCH_SIZE,
     )
 
+    # wandb_logger = WandbLogger(
+    #     project = cfg.WANDB_PROJECT,
+    #     save_dir = cfg.WANDB_SAVE_DIR,
+    #     entity = cfg.WANDB_ENTITY,
+    #     name = cfg.WANDB_NAME,
+    # )
     wandb_logger = WandbLogger(
-        project = cfg.WANDB_PROJECT,
+        project = 'imagenet',
         save_dir = cfg.WANDB_SAVE_DIR,
-        entity = cfg.WANDB_ENTITY,
+        entity = None,
         name = cfg.WANDB_NAME,
     )
+
 
     trainer = Trainer(
         accelerator = cfg.ACCELERATOR,
